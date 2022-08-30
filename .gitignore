@@ -48,7 +48,7 @@ ipch/
 *~
 
 # ignore bin test directory
-bin/
+# bin/
 *.log
 *.lastbuildstate
 *.manifest
