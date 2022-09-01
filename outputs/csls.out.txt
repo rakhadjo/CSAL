@@ -1,12 +1,5 @@
 ** CSLS: listing CoreSight config...
 ** CSLS: Using custom ROM address 0x20000000
-** CSLS: done listing CoreSight config
-root@genericarmv8:~/Workspace/WS2/CSAL_2/bin/arm64/rel# clear
-00000 > csls.out.t^CWorkspace/WS2/CSAL_2/bin/arm64/rel# ./csls -v -romaddr 0x2000
-root@genericarmv8:~/Workspace/WS2/CSAL_2/bin/arm64/rel# clear
-00000genericarmv8:~/Workspace/WS2/CSAL_2/bin/arm64/rel# ./csls -v -romaddr 0x200
-** CSLS: listing CoreSight config...
-** CSLS: Using custom ROM address 0x20000000
 ** csaccess: Registering ROM table at 0020000000
 ** csaccess: Scanning ROM table at 0020000000 (mapped to 0x7f8142f000)
 ** csaccess: Registering device or ROM table at 0020010000
