@@ -594,6 +594,8 @@ int main(int argc, char **argv)
 
     pause_mode = 0;
 
+    printf("Beginning `main` on TraceDemo\n");
+
     if (argc >= 2) {
         int i = 1;
         for (; i < argc; ++i) {
