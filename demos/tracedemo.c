@@ -777,8 +777,8 @@ int main(int argc, char **argv)
     set_kernel_trace_dump_range(o_trace_start_address,
                                 o_trace_end_address);
 
-    printf("TRACE START: %l\n", o_trace_start_address);
-    printf("TRACE END  : %l\n", o_trace_end_address);
+    printf("TRACE START: %d\n", o_trace_start_address);
+    printf("TRACE END  : %d\n", o_trace_end_address);
 
     if (itm && devices.itm == NULL) {
         printf("CSDEMO: no ITM/STM in system\n");
