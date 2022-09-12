@@ -732,6 +732,11 @@ int main(int argc, char **argv)
     int i;
     printf("CoreSight demonstrator\n");
     show_affinity();
+
+    /*
+        PROGRAM OUTPUT STARTS HERE
+    */
+
     if (cpu_to_trace != ALL_CPUS) {
         if (set_affinity(cpu_to_trace) < 0) {
             return EXIT_FAILURE;
@@ -771,6 +776,9 @@ int main(int argc, char **argv)
 
     set_kernel_trace_dump_range(o_trace_start_address,
                                 o_trace_end_address);
+
+    printf("TRACE START: %l\n", o_trace_start_address);
+    printf("TRACE END  : %l\n", o_trace_end_address);
 
     if (itm && devices.itm == NULL) {
         printf("CSDEMO: no ITM/STM in system\n");
