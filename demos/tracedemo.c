@@ -575,6 +575,11 @@ static int help(void)
     return EXIT_FAILURE;
 }
 
+int output_pc() {
+    printf("PC: %#x\n", __current_pc())
+    return 0;
+}
+
 
 int main(int argc, char **argv)
 {
@@ -595,6 +600,7 @@ int main(int argc, char **argv)
     pause_mode = 0;
 
     printf("Beginning `main` on TraceDemo\n");
+    output_pc();
 
     if (argc >= 2) {
         int i = 1;
@@ -764,6 +770,7 @@ int main(int argc, char **argv)
     }
 
     pause_demo();
+    output_pc();
 
 
     if (do_configure_trace(board) < 0) {
@@ -771,14 +778,17 @@ int main(int argc, char **argv)
     }
 
     printf("CSDEMO: Trace configured\n");
+    output_pc();
 
     pause_demo();
+    output_pc();
 
     set_kernel_trace_dump_range(o_trace_start_address,
                                 o_trace_end_address);
+    output_pc();
 
-    printf("TRACE START: %d\n", o_trace_start_address);
-    printf("TRACE END  : %d\n", o_trace_end_address);
+    // printf("TRACE START: %d\n", o_trace_start_address);
+    // printf("TRACE END  : %d\n", o_trace_end_address);
 
     if (itm && devices.itm == NULL) {
         printf("CSDEMO: no ITM/STM in system\n");
@@ -788,8 +798,10 @@ int main(int argc, char **argv)
     printf("dumping config with %s\n", itm ? "ITM enabled" : "No ITM");
     do_dump_config(board, &devices, itm);
     cs_checkpoint();
+    output_pc();
 
     pause_demo();
+    output_pc();
 
     if (0) {
         cs_cti_diag();
@@ -800,6 +812,7 @@ int main(int argc, char **argv)
            cs_get_buffer_unread_bytes(devices.etb));
 
     pause_demo();
+    output_pc();
 
     if (itm) {
         for (i = 0; i < 40; ++i) {
